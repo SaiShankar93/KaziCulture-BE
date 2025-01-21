@@ -30,12 +30,12 @@ dotenv.config();
 connectDB();
 const app = express();
 
-app.use(
-  cors({
-    origin: true,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: ['https://kazi-culture-fe.vercel.app/', 'http://localhost:5173'], // Replace with your production frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify headers
+  credentials: true
+}));
 
 app.use("/images", express.static("images"));
 app.post(
