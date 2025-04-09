@@ -36,7 +36,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify headers
   credentials: true
 }));
-
 app.use("/images", express.static("images"));
 app.post(
   "/webhook",
